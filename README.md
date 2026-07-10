@@ -48,14 +48,14 @@ npx playwright show-report
 
 ## What's Covered
 
-- **Login** — happy path, invalid credentials, empty fields, logout
-- **E2E Purchase Flow** — add multiple items, cart badge check, full checkout, order confirmation
-- **Bug Hunt** — findings from exploring as `problem_user` are in `BUG_REPORT.md`
+- **Login** - happy path, invalid credentials, empty fields, logout
+- **E2E Purchase Flow** - add multiple items, cart badge check, full checkout, order confirmation
+- **Bug Hunt** - findings from exploring as `problem_user` are in `BUG_REPORT.md`
 
 ## Bonus Work
 
-- **API Testing** — `tests/api/reqres.spec.js` covers GET, POST, and a 404 case. Originally planned against reqres.in, but reqres.in now requires a signed-up API key for every request, which didn't make sense to hardcode into a public repo for this assignment — so I switched to JSONPlaceholder instead, which is fully open and needs no auth.
-- **CI Pipeline** — `.github/workflows/tests.yml` runs the full suite on every push to `main`, with the HTML report uploaded as an artifact on failure.
+- **API Testing** - `tests/api/reqres.spec.js` covers GET, POST, and a 404 case. Originally planned against reqres.in, but reqres.in now requires a signed-up API key for every request, which didn't make sense to hardcode into a public repo for this assignment — so I switched to JSONPlaceholder instead, which is fully open and needs no auth.
+- **CI Pipeline** - `.github/workflows/tests.yml` runs the full suite on every push to `main`, with the HTML report uploaded as an artifact on failure.
 
 ## Design Decisions
 
@@ -65,4 +65,4 @@ npx playwright show-report
 
 ## What I'd Do Differently With More Time
 
-I'd add a few more edge cases to the checkout flow — like submitting with an invalid postal code format, or attempting checkout with an empty cart. I'd also spend more time on the `problem_user` bug hunt, since I found four issues in the time I had but suspect there are more, especially around cart quantity edge cases and the sort dropdown.
+I'd add a few more edge cases to the checkout flow - like submitting with an invalid postal code format, or attempting checkout with an empty cart. I'd also spend more time on the `problem_user` bug hunt, since I found four issues in the time I had but suspect there are more, especially around cart quantity edge cases and the sort dropdown.
