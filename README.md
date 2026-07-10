@@ -7,6 +7,8 @@ Automated test suite for [SauceDemo](https://www.saucedemo.com), built with Play
 I went with Playwright over Cypress and Selenium mainly because I'd already used it for a previous portfolio project, and I like that it runs tests across Chromium, Firefox, and WebKit out of the box without extra config. The built-in `request` fixture also made the API bonus task straightforward without needing a separate tool.
 
 ## Project Structure
+
+```
 saucedemo-qa-assignment/
 ├── pages/              # Page Object classes (Login, Inventory, Cart, Checkout)
 ├── tests/              # Test specs
@@ -14,6 +16,7 @@ saucedemo-qa-assignment/
 ├── test-data/          # Test data kept separate from test logic
 ├── .github/workflows/  # CI pipeline (bonus)
 └── BUG_REPORT.md        # Findings from problem_user exploration
+```
 
 ## Setup
 
