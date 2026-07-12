@@ -29,3 +29,30 @@ test('completes full purchase flow with two items', async ({ page }) => {
   await checkout.finish();
   await expect(checkout.confirmationHeader).toHaveText('Thank you for your order!');
 });
+
+test('shows correct individual item prices before checkout', async ({ page }) => {
+  const login = new LoginPage(page);
+  const inventory = new InventoryPage(page);
+
+  await login.goto();
+  await login.login('standard_user', 'secret_sauce');
+
+  await inventory.addToCart('sauce-labs-backpack');
+  await inventory.addToCart('sauce-labs-bike-light');
+  await inventory.goToCart();
+
+  const prices = page.locator('.inventory_item_price');
+  await expect(prices).toHaveText(['$29.99', '$9.99']);
+});
+
+test('checkout button is not available with an empty cart', async ({ page }) => {
+  const login = new LoginPage(page);
+  const inventory = new InventoryPage(page);
+
+  await login.goto();
+  await login.login('standard_user', 'secret_sauce');
+
+  await inventory.goToCart();
+  await expect(page.locator('[data-test="checkout"]')).toBeVisible();
+  await expect(page.locator('.cart_item')).toHaveCount(0);
+});
