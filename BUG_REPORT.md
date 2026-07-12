@@ -55,3 +55,15 @@ Logged in as `problem_user` / `secret_sauce` and explored the inventory, cart, a
 
 ## Notes
 This exploration focused on the inventory, cart, and checkout flow within the time available. With more time I'd also check the sort dropdown behavior and cart quantity edge cases (e.g. adding/removing the same item repeatedly) for `problem_user`.
+
+---
+
+### Bug 5: Sort dropdown options are not selectable
+**Steps to Reproduce:**
+1. Log in as `problem_user`
+2. On the inventory page, click the sort dropdown (top right of the product list)
+3. Attempt to click any option (e.g. "Price (low to high)" or "Name (Z to A)")
+
+**Expected:** Selecting an option re-orders the product list accordingly.
+**Actual:** The dropdown opens and displays all sort options, but clicking on an option has no effect — it doesn't register as selected and the product order never changes.
+**Severity:** Medium — a core piece of the shopping experience (sorting/filtering) is completely non-functional, though it doesn't block checkout or purchasing.
